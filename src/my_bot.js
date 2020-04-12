@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+require('dotenv').config();
 
 client.on('ready', () => {
   console.log('Connect as' + client.user.tag);
@@ -43,9 +44,8 @@ const helpCommand = (args, receiveMessage) => {
   if (args.length === 0) {
     return receiveMessage.channel.send('I dont know what u want to ask, please use !help [topic]');
   } else {
-    console.log(args);
     return receiveMessage.channel.send(`I think you want to know ${args}`);
   }
 }
 
-client.login('Njk4ODYxMzQ5Njg1NDI4MjU1.XpL_dw.AU76RokyEHPCPmnCJkIASHaMklw');
+client.login(process.env.BOT_SECRET);
