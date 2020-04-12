@@ -2,9 +2,9 @@
   "name": "discord-bot",
   "version": "1.0.0",
   "description": "bot",
-  "main": "src/my_bot.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/my_bot.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
