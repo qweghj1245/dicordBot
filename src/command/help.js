@@ -1,11 +1,13 @@
 const { parseCommand } = require('../base/commen');
 
 module.exports.helpCommand = (receiveMessage) => {
-  parseCommand(receiveMessage).then(({ primaryCommand, args }) => {
-    if (primaryCommand === 'help') {
-      formatCommand(args, receiveMessage);
-    }
-  });
+  if (receiveMessage.content.startsWith('!')) {
+    parseCommand(receiveMessage).then(({ primaryCommand, args }) => {
+      if (primaryCommand === 'help') {
+        formatCommand(args, receiveMessage);
+      }
+    });
+  }
 };
 
 const formatCommand = (args, receiveMessage) => {

@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const { baldCommand, uglyCommand, prettyCommand } = require('./anti/baobao');
+const { baobao } = require('./anti/baobao');
 const { helpCommand } = require('./command/help');
 
 client.on('ready', () => {
@@ -26,9 +26,7 @@ client.on('message', (receiveMessage) => {
   // receiveMessage.react('👍');
 
   helpCommand(receiveMessage);
-  baldCommand(receiveMessage);
-  uglyCommand(receiveMessage);
-  prettyCommand(receiveMessage);
+  baobao(receiveMessage);
 });
 
 client.login(process.env.BOT_SECRET);
