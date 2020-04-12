@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const { baldCommand } = require('./command/bald');
 
 client.on('ready', () => {
   console.log('Connect as' + client.user.tag);
@@ -26,6 +27,7 @@ client.on('message', (receiveMessage) => {
   if (receiveMessage.content.startsWith('!')) {
     processCommand(receiveMessage);
   }
+  baldCommand(receiveMessage);
 });
 
 const processCommand = (receiveMessage) => {
